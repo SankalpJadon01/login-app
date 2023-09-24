@@ -1,0 +1,15 @@
+<div style="color: red;">{{msg}}</div>
+<form (ngSubmit)="authenticate()" class="was-validated">
+<label >Username</label>
+<input type="text" class="form-control" name="uname" [(ngModel)]="cred.username"  required pattern="[A-za-z0-9]{5,}">
+<br>
+<label >Password</label>
+<input type="password" class="form-control" name="passwd" [(ngModel)]="cred.password" required pattern="[A-za-z0-9]{5,}">
+<br>
+<label >Role</label>
+<select name="role" class="form-control" [(ngModel)]="cred.role">
+    <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+</select>
+<br>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
